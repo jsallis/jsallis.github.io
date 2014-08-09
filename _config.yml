@@ -9,4 +9,4 @@ github_username:  jsallis
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /posts/:title
