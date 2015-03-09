@@ -9,4 +9,5 @@ github_username:  jsallis
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
 permalink: /posts/:year/:month/:title
