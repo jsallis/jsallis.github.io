@@ -45,6 +45,19 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     mercenary (0.3.5)
+    octopress (3.0.0.rc.34)
+      jekyll (~> 2.0)
+      mercenary (~> 0.3.2)
+      octopress-deploy
+      octopress-escape-code (~> 2.0)
+      octopress-hooks (~> 2.0)
+      titlecase
+    octopress-deploy (1.2.0)
+      colorator
+    octopress-escape-code (2.0.6)
+      octopress-hooks (~> 2.0)
+    octopress-hooks (2.6.0)
+      jekyll (~> 2.0)
     parslet (1.5.0)
       blankslate (~> 2.0)
     posix-spawn (0.3.10)
@@ -59,6 +72,7 @@ GEM
     sass (3.4.13)
     timers (4.0.1)
       hitimes
+    titlecase (0.1.1)
     toml (0.1.2)
       parslet (~> 1.5.0)
     yajl-ruby (1.2.1)
@@ -67,4 +81,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll
+  octopress (~> 3.0.0.rc)
