@@ -9,7 +9,7 @@ date: 2015-03-08T20:39:49-07:00
 Assuming we have a docker machine already running and active, we first need to create a swarm token:
 
 {% highlight bash %}
-export SWARM_TOKEN=`docker run swarm create`
+export SWARM_TOKEN=$(docker run swarm create)
 {% endhighlight %}
 
 Next, we create our swarm master, passing our token for discovery purposes:
@@ -38,7 +38,7 @@ test-swarm-node2   *        virtualbox   Running   tcp://192.168.99.106:2376   t
 We can load our swarm environment into our shell:
 
 {% highlight bash %}
-$(docker-machine env --swarm test-swarm)
+eval "$(docker-machine env --swarm test-swarm)"
 {% endhighlight %}
 
 Now, running `docker info` will output the status of our swarm:
@@ -69,7 +69,7 @@ docker run -d -p 80 --name uhttpd3 fnichol/uhttpd
 docker run -d -p 80 --name uhttpd4 fnichol/uhttpd
 {% endhighlight %}
 
-We can see (based on the container names) that the containers have been distributed throughout the swarm:
+Running `docker ps`, we can see that the containers have been distributed throughout the swarm, as indicated by the container names being prefixed with the name of the swarn node on which they running (ie. `test-swarm-node2/`):
 
 {% highlight text %}
 CONTAINER ID        IMAGE                   COMMAND                CREATED             STATUS              PORTS                          NAMES
